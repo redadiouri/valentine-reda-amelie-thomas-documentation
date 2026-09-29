@@ -225,3 +225,14 @@ git commit -m "docs: preciser les separateurs dans les noms de branches"
 ```
 
 Ce commit conserve une trace de la modification sur sa branche locale.
+
+### Publier la branche
+
+Réda envoie sa branche et son commit sur GitHub :
+
+```bash
+git push -u origin docs/preciser-nommage
+```
+
+Valentine peut maintenant consulter cette branche sur le dépôt distant.
+Les modifications ne sont pas encore intégrées à `main`.
