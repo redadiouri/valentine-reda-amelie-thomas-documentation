@@ -192,3 +192,20 @@ git switch -c docs/preciser-nommage
 
 Cette branche lui permet de préparer sa modification avant
 de la proposer à Valentine pour relecture.
+
+### Modifier le document
+
+Sur sa branche `docs/preciser-nommage`, Réda ouvre `workflow.md`
+et ajoute une règle dans la partie sur le nommage :
+
+> Utiliser des tirets pour séparer les mots, par exemple :
+> `docs/guide-installation`.
+
+Il enregistre le fichier, puis vérifie sa modification :
+
+```bash
+git diff
+```
+
+Cette commande lui permet de relire les lignes ajoutées ou supprimées
+avant de préparer son commit.
