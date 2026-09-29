@@ -125,6 +125,17 @@ git push</code></pre>
         <p>La correction apparaît dans la pull request existante. Valentine
           vérifie l’exemple et approuve la nouvelle version.</p>
       </li>
+      <li>
+        <h4>L’équipe récupère la version validée</h4>
+        <p>Réda fusionne la pull request avec un commit de fusion et supprime
+          la branche terminée. Ses deux commits restent dans l’historique.</p>
+        <p>Après avoir enregistré leur travail en cours, les autres membres
+          récupèrent la version commune :</p>
+        <pre><code>git switch main
+git pull --ff-only origin main</code></pre>
+        <p>La tâche est terminée : la modification a été expliquée, relue,
+          corrigée et partagée avec les quatre membres.</p>
+      </li>
     </ol>
   </aside>
 </section>
