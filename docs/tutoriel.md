@@ -13,3 +13,22 @@ git --version
 ```
 
 Si Git est installé, le terminal affiche sa version, par exemple `git version 2.x.x`. Si la commande n’est pas reconnue, installez Git depuis [git-scm.com](https://git-scm.com/downloads), puis ouvrez un nouveau terminal et relancez la commande.
+
+## 2. Configurer son nom et son adresse e-mail
+
+Indiquez le nom et l’adresse que Git inscrira dans vos commits :
+
+```bash
+git config --global user.name "Prénom Nom"
+git config --global user.email "prenom.nom@example.com"
+```
+
+Remplacez ces valeurs par votre nom et l’adresse associée à votre compte GitHub (ou l’adresse recommandée par l’entreprise). L’option `--global` applique ces réglages à tous les dépôts de votre ordinateur. Vérifiez-les avec :
+
+```bash
+git config --global user.name
+git config --global user.email
+```
+
+Chaque commande doit afficher la valeur configurée.
+
