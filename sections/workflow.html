@@ -6,4 +6,19 @@
     <p>La branche <code>main</code> contient la documentation validée et sert de
       référence commune. Chaque modification est préparée sur une branche dédiée.</p>
   </header>
+  <ol class="steps">
+    <li class="card">
+      <h3>Créer une branche pour sa tâche</h3>
+      <p>Avant de commencer une nouvelle tâche, enregistrer son travail en cours,
+        puis partir de <code>main</code> à jour. Pour rédiger le workflow :</p>
+      <pre><code>git switch main
+git pull --ff-only origin main
+git switch -c docs/workflow</code></pre>
+      <p>Cette création se fait une seule fois. Si la branche existe déjà,
+        la rejoindre avec <code>git switch docs/workflow</code>.</p>
+      <p>Choisir un nom court, en minuscules, sans espaces ni accents, avec des
+        tirets entre les mots : <code>docs/</code> pour la documentation,
+        <code>feat/</code> pour une fonctionnalité et <code>fix/</code> pour une correction.</p>
+    </li>
+  </ol>
 </section>
