@@ -39,3 +39,35 @@ Pour ce projet, nos branches sont :
 - Réda : `docs/workflow`.
 - Amélie : `docs/tutoriel`.
 - Thomas : `docs/bonnes-pratiques`.
+
+## 3. Enregistrer son travail avec des commits
+
+Un commit enregistre une version des changements sélectionnés.
+Il permet de suivre l’évolution du projet et de comprendre les modifications.
+
+Chez NovaWeb, nous faisons un commit après chaque ajout ou correction
+cohérente, avec un message qui explique le changement.
+
+Nous vérifions d’abord les fichiers modifiés et leur contenu :
+
+```bash
+git status
+git diff
+```
+
+Nous sélectionnons ensuite le fichier à enregistrer :
+
+```bash
+git add workflow.md
+```
+
+Puis nous créons le commit :
+
+```bash
+git commit -m "docs: expliquer le role de la branche main"
+```
+
+Le message doit être précis : « docs: expliquer le role de la branche main »
+est plus utile que « modification ».
+
+Un commit reste sur notre ordinateur tant qu’il n’a pas été envoyé sur GitHub.
