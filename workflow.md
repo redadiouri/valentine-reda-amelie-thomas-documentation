@@ -71,3 +71,27 @@ Le message doit être précis : « docs: expliquer le role de la branche main »
 est plus utile que « modification ».
 
 Un commit reste sur notre ordinateur tant qu’il n’a pas été envoyé sur GitHub.
+
+## 4. Envoyer sa branche sur GitHub
+
+Une fois les commits créés, nous envoyons notre branche sur GitHub
+pour partager notre travail avec l’équipe.
+
+Lors du premier envoi de la branche :
+
+```bash
+git push -u origin docs/workflow
+```
+
+- `origin` désigne le dépôt distant sur GitHub.
+- `docs/workflow` est la branche à envoyer.
+- `-u` associe notre branche locale à la branche distante.
+
+Pour les envois suivants depuis cette même branche, après de nouveaux commits :
+
+```bash
+git push
+```
+
+Chaque membre adapte le nom de branche à sa tâche.
+L’envoi publie les commits sur GitHub, mais ne les fusionne pas dans `main`.
