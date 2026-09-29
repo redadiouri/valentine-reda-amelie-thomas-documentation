@@ -6,7 +6,7 @@
 
 ## 📥 `git clone` — Récupérer un dépôt
 
-Permet de **copier un dépôt distant sur ton ordinateur**.
+**Utilité :** Permet de **copier un dépôt distant sur ton ordinateur**.
 
 ### Syntaxe
 
@@ -20,23 +20,41 @@ git clone <URL>
 git clone https://github.com/utilisateur/projet.git
 ```
 
+**Quand l’utiliser :** Au début d’un projet existant, lorsque tu veux récupérer le dépôt sur ton ordinateur.
+
 ---
 
 ## 🔎 `git status` — Voir l'état du projet
 
-Affiche les fichiers **modifiés, ajoutés, supprimés** et ceux qui sont prêts à être commit.
+**Utilité :** Affiche les fichiers **modifiés, ajoutés, supprimés** et ceux qui sont prêts à être commit.
+
+### Syntaxe
 
 ```bash
 git status
 ```
 
-> 💡 Très utile pour savoir **où tu en es avant un commit**.
+### Exemple
+
+```bash
+git status
+```
+
+**Quand l’utiliser :** Avant de préparer un commit, et à tout moment pour savoir où en est le projet.
 
 ---
 
 ## ➕ `git add` — Préparer les modifications
 
-Ajoute des modifications à la **zone de staging**, afin de les inclure dans le prochain commit.
+**Utilité :** Ajoute des modifications à la **zone de staging**, afin de les inclure dans le prochain commit.
+
+### Syntaxe
+
+```bash
+git add <fichier>
+```
+
+### Exemple
 
 ### Ajouter un fichier précis
 
@@ -50,11 +68,15 @@ git add fichier.py
 git add .
 ```
 
+**Quand l’utiliser :** Après avoir modifié les fichiers et vérifié les changements, juste avant `git commit`.
+
 ---
 
 ## 💾 `git commit` — Enregistrer les modifications
 
-Crée un **point de sauvegarde** dans l'historique Git avec les fichiers précédemment ajoutés avec `git add`.
+**Utilité :** Crée un **point de sauvegarde** dans l'historique Git avec les fichiers précédemment ajoutés avec `git add`.
+
+### Syntaxe
 
 ```bash
 git commit -m "Description des modifications"
@@ -73,23 +95,27 @@ git add .
 git commit -m "Mon message"
 ```
 
+**Quand l’utiliser :** Quand les changements préparés avec `git add` forment une étape cohérente que tu veux conserver dans l’historique.
+
 ---
 
 ## 🕐 `git log` — Consulter l'historique
 
-Affiche l'historique des commits.
+**Utilité :** Affiche l'historique des commits.
+
+### Syntaxe
 
 ```bash
 git log
 ```
 
-### Version plus compacte
+### Version plus compacte et exemple
 
 ```bash
 git log --oneline
 ```
 
-### Exemple
+Exemple de résultat :
 
 ```text
 a43cf81 Ajout page connexion
@@ -97,11 +123,21 @@ a43cf81 Ajout page connexion
 51cd182 Initial commit
 ```
 
+**Quand l’utiliser :** Pour retrouver un ancien commit ou comprendre l’évolution du projet.
+
 ---
 
 ## 🔀 `git diff` — Voir les modifications
 
-Affiche précisément **ce qui a été modifié dans les fichiers** depuis le dernier commit.
+**Utilité :** Affiche précisément **ce qui a été modifié dans les fichiers**. Sans option, `git diff` montre les modifications non préparées avec `git add`.
+
+### Syntaxe
+
+```bash
+git diff
+```
+
+### Exemple
 
 ```bash
 git diff
@@ -113,9 +149,13 @@ git diff
 git diff --staged
 ```
 
+**Quand l’utiliser :** Après avoir modifié des fichiers, pour relire les changements avant `git add` ou `git commit`.
+
 ---
 
 ## 🌿 `git branch` — Gérer les branches
+
+**Utilité :** Affiche, crée ou supprime des branches locales.
 
 ### Voir les branches
 
@@ -125,7 +165,7 @@ git branch
 
 > La branche actuelle est indiquée par `*`.
 
-### Créer une branche
+### Créer une branche : syntaxe
 
 ```bash
 git branch <nom>
@@ -143,11 +183,15 @@ git branch nouvelle-feature
 git branch -d <nom>
 ```
 
+**Quand l’utiliser :** Pour consulter les branches, préparer une nouvelle piste de travail ou supprimer une branche locale devenue inutile.
+
 ---
 
 ## 🔄 `git switch` — Changer de branche
 
-### Se déplacer vers une autre branche
+**Utilité :** Permet de rejoindre une autre branche, ou de créer une branche et de la rejoindre immédiatement.
+
+### Se déplacer vers une autre branche : syntaxe
 
 ```bash
 git switch <nom>
@@ -171,23 +215,41 @@ git switch -c <nom>
 git switch -c nouvelle-feature
 ```
 
+**Quand l’utiliser :** Lorsque tu veux travailler sur une autre branche ou commencer un nouveau travail sur une branche distincte.
+
 ---
 
 ## ⬇️ `git pull` — Récupérer les changements
 
-Récupère les nouvelles modifications du dépôt distant et les **intègre dans ta branche locale**.
+**Utilité :** Récupère les nouvelles modifications du dépôt distant et les **intègre dans ta branche locale**.
+
+### Syntaxe
 
 ```bash
 git pull
 ```
 
-> 💡 Typiquement, tu l'utilises avant de commencer à travailler pour récupérer les dernières modifications de tes collègues.
+### Exemple
+
+```bash
+git pull
+```
+
+**Quand l’utiliser :** Typiquement avant de commencer à travailler pour récupérer les dernières modifications de tes collègues.
 
 ---
 
 ## ⬆️ `git push` — Envoyer ses commits
 
-Envoie tes commits locaux vers le **dépôt distant**.
+**Utilité :** Envoie tes commits locaux vers le **dépôt distant**.
+
+### Syntaxe
+
+```bash
+git push
+```
+
+### Exemple
 
 ```bash
 git push
@@ -204,6 +266,8 @@ git push -u origin <nom-branche>
 ```bash
 git push -u origin nouvelle-feature
 ```
+
+**Quand l’utiliser :** Après un ou plusieurs commits locaux, lorsque tu veux les publier sur le dépôt distant.
 
 ---
 
