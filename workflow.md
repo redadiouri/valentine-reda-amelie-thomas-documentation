@@ -119,3 +119,26 @@ et demande une relecture à Valentine.
 La création de la pull request ne fusionne pas les branches.
 Les nouveaux commits envoyés sur la même branche sont automatiquement
 ajoutés à la pull request.
+
+## 6. Faire relire son travail
+
+Chez NovaWeb, chaque pull request doit être relue par un autre membre
+avant sa fusion dans `main`. Valentine relit le document de Réda.
+
+La personne chargée de la relecture consulte l’onglet « Files changed »
+de la pull request et vérifie :
+
+- La clarté des explications.
+- L’exactitude des commandes et des exemples.
+- L’orthographe et la présentation Markdown.
+- Le respect des consignes du projet.
+
+Elle peut laisser des commentaires, demander des corrections
+ou approuver les changements.
+
+Si des corrections sont demandées, l’auteur modifie son fichier
+sur la même branche, crée un nouveau commit et l’envoie avec `git push`.
+La pull request se met automatiquement à jour.
+
+Après vérification des corrections, le collègue approuve la pull request.
+Cette approbation permet de passer à la fusion.
