@@ -60,5 +60,17 @@ git commit -m "docs: expliquer les etapes du workflow"</code></pre>
       <p>Si la branche contient d’anciens changements non intégrés à
         <code>main</code>, ils apparaissent aussi : vérifier tout le contenu proposé.</p>
     </li>
+    <li class="card">
+      <h3>Faire relire et corriger</h3>
+      <p>Valentine consulte les fichiers modifiés dans la pull request. Elle vérifie
+        les explications, les commandes, la structure HTML et la lisibilité.</p>
+      <p>Si elle demande une correction, Réda reste sur <code>docs/workflow</code>,
+        modifie son fichier, puis enregistre et envoie la correction :</p>
+      <pre><code>git add sections/workflow.html
+git commit -m "docs: clarifier la relecture du workflow"
+git push</code></pre>
+      <p>La même pull request se met à jour. Valentine relit la correction et
+        approuve les changements lorsqu’ils sont prêts.</p>
+    </li>
   </ol>
 </section>
