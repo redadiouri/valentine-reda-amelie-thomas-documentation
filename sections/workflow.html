@@ -30,5 +30,15 @@ git diff</code></pre>
         <code>git diff</code> montre les modifications non préparées des fichiers
         déjà suivis ; un nouveau fichier doit aussi être relu dans l’éditeur.</p>
     </li>
+    <li class="card">
+      <h3>Enregistrer un ajout cohérent avec un commit</h3>
+      <p>Sélectionner uniquement le fichier concerné, vérifier le contenu préparé,
+        puis créer un commit avec un message qui décrit la modification.</p>
+      <pre><code>git add sections/workflow.html
+git diff --staged
+git commit -m "docs: expliquer les etapes du workflow"</code></pre>
+      <p>Un commit enregistre les changements sélectionnés dans l’historique local.
+        Chez NovaWeb, chaque ajout ou correction cohérente possède son propre commit.</p>
+    </li>
   </ol>
 </section>
