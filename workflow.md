@@ -248,3 +248,15 @@ Sur GitHub, Réda ouvre une pull request avec :
 
 Il sélectionne Valentine dans la rubrique « Reviewers »
 pour lui demander de vérifier cette modification avant la fusion.
+
+### La relecture de Valentine
+
+Valentine ouvre la pull request et consulte l’onglet « Files changed ».
+Elle vérifie que la règle ajoutée est claire et que l’exemple la respecte.
+
+Elle demande une précision dans un commentaire :
+
+> Peux-tu préciser que les tirets remplacent les espaces dans le nom de branche ?
+
+Elle choisit « Request changes » pour signaler qu’une correction
+est attendue avant l’approbation.
