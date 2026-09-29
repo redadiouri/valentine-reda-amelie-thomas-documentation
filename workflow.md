@@ -142,3 +142,9 @@ La pull request se met automatiquement à jour.
 
 Après vérification des corrections, le collègue approuve la pull request.
 Cette approbation permet de passer à la fusion.
+
+## 7. Fusionner la pull request
+
+Après l’approbation du collègue et la résolution des éventuels conflits,
+l’auteur peut fusionner sa pull request dans `main`.
+Les changements rejoignent alors la documentation commune de NovaWeb.
