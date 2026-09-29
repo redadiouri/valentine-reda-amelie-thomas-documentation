@@ -55,3 +55,34 @@ git switch -c docs/guide-nouveau
 
 `git pull` récupère les derniers changements de `main`. `git switch -c` crée la branche `docs/guide-nouveau` et s’y place. Une branche séparée permet de préparer votre contribution sans modifier directement `main`.
 
+## 5. Créer ou modifier un fichier Markdown
+
+Dans VS Code, créez `docs/guide-nouveau.md` (ou ouvrez un fichier Markdown existant), rédigez vos changements, puis enregistrez le fichier. Markdown est un format texte : les titres s’écrivent avec `#`, les listes avec `-` et les liens avec `[texte](URL)`.
+
+Exemple de contenu :
+
+```markdown
+# Guide du nouveau membre
+
+Bienvenue chez NovaWeb !
+
+## Premiers pas
+
+- Installer les outils nécessaires.
+- Lire le workflow de l’équipe.
+```
+
+Adaptez le nom du fichier et son contenu à la tâche confiée.
+
+## 6. Vérifier les changements
+
+Dans le terminal, contrôlez l’état du dépôt et le contenu des modifications :
+
+```bash
+git status
+git diff --check
+git diff
+```
+
+`git status` indique les fichiers modifiés ou nouveaux. `git diff --check` repère notamment les espaces superflus en fin de ligne. `git diff` affiche les modifications des fichiers déjà suivis ; un nouveau fichier n’apparaît pas encore dans ce diff. Relisez le fichier dans VS Code et vérifiez que seuls les changements attendus sont présents.
+
