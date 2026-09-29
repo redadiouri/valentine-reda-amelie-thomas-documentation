@@ -1,0 +1,44 @@
+<section id="tutoriel">
+	<h2>Contribuer au projet</h2>
+	<p>Suivez ces étapes pour proposer une modification dans de bonnes conditions.</p>
+	<ol>
+		<li>
+			<p>Mettez à jour la branche principale, puis créez une branche adaptée à votre tâche.</p>
+			<pre><code>git switch main
+git pull origin main
+git switch -c docs/nom-de-la-tache</code></pre>
+		</li>
+		<li>
+			<p>Modifiez les fichiers concernés et vérifiez les changements avant de les enregistrer.</p>
+			<pre><code>git status
+git diff</code></pre>
+		</li>
+		<li>
+			<p>Ajoutez les fichiers utiles et créez un commit avec un message précis.</p>
+			<pre><code>git add chemin/du-fichier
+git commit -m "docs: décrire la contribution"</code></pre>
+		</li>
+		<li>
+			<p>Publiez votre branche sur GitHub. Pour son premier envoi, utilisez :</p>
+			<pre><code>git push -u origin docs/nom-de-la-tache</code></pre>
+			<p>Ouvrez ensuite une pull request vers <code>main</code>, décrivez vos changements et demandez une relecture.</p>
+		</li>
+		<li>
+			<p>Traitez les retours de relecture, envoyez vos corrections sur la même branche, puis faites fusionner la pull request après approbation.</p>
+			<pre><code>git push</code></pre>
+		</li>
+	</ol>
+</section>
+
+<section id="bonnes-pratiques">
+	<h2>Bonnes pratiques</h2>
+	<p>Quelques règles simples rendent le travail d’équipe plus clair et plus sûr.</p>
+	<ul>
+		<li>Faites des commits courts, cohérents et consacrés à un changement précis.</li>
+		<li>Rédigez des messages de commit qui expliquent clairement la modification.</li>
+		<li>Relisez votre travail et faites relire chaque pull request avant sa fusion.</li>
+		<li>Vérifiez les fichiers modifiés avec <code>git status</code> et <code>git diff</code> avant de les ajouter.</li>
+		<li>Ne publiez jamais de mot de passe, de clé API ou d’autre secret dans le dépôt.</li>
+		<li>Échangez avec l’équipe si plusieurs personnes travaillent sur les mêmes fichiers.</li>
+	</ul>
+</section>
