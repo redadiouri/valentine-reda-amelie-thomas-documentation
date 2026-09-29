@@ -120,3 +120,89 @@ Ajouter une courte procédure de résolution d’un conflit :
 - [Workflow de collaboration](workflow.md)
 - [Tutoriel pratique](tutoriel.md)
 - [Bonnes pratiques et conflits](bonnes-pratiques.md)
+
+
+## Création du site de documentation Git
+
+### Objectif
+
+Créer une page HTML claire et soignée pour présenter la documentation
+Git de NovaWeb. Le site doit être agréable à lire sur ordinateur et mobile.
+
+### Valentine — Structure HTML et commandes
+
+**Fichier :** `index.html`
+**Branche :** `feat/structure-html`
+
+- Créer la structure HTML avec la langue française et la configuration mobile.
+- Ajouter l’en-tête, le titre du site et une présentation de NovaWeb.
+- Créer le menu de navigation.
+- Ajouter une section présentant les commandes Git essentielles.
+- Préparer les emplacements des sections Workflow et Tutoriel.
+- Ajouter le pied de page.
+- Relier la page au fichier `style.css`.
+
+Utiliser ces identifiants pour les sections :
+`commandes`, `workflow`, `tutoriel`, `bonnes-pratiques`.
+
+### Réda — Section Workflow
+
+**Fichier :** `sections/workflow.html`
+**Branche :** `feat/section-workflow`
+
+- Créer un bloc `<section id="workflow">` destiné à la page principale.
+- Présenter GitHub Flow sous forme d’étapes numérotées.
+- Expliquer les branches, commits, push, pull requests, relectures et fusions.
+- Ajouter des exemples de commandes avec `<pre><code>`.
+- Illustrer le parcours d’une modification de Réda relue par Valentine.
+
+Ce fichier contient uniquement la section, sans `<html>`, `<head>` ni `<body>`.
+
+### Amélie — Tutoriel et bonnes pratiques
+
+**Fichier :** `sections/tutoriel.html`
+**Branche :** `feat/section-tutoriel`
+
+- Créer un bloc `<section id="tutoriel">`.
+- Présenter les étapes à suivre pour contribuer au projet.
+- Ajouter les commandes utiles avec `<pre><code>`.
+- Créer un second bloc `<section id="bonnes-pratiques">`.
+- Résumer les règles importantes : commits précis, relecture et absence de secrets.
+- Utiliser des listes et des paragraphes courts.
+
+Ce fichier contient uniquement les deux sections, sans structure HTML complète.
+
+### Thomas — Apparence et adaptation mobile
+
+**Fichier :** `style.css`
+**Branche :** `feat/style-css`
+
+- Définir les couleurs, la typographie et les espacements.
+- Styliser l’en-tête et le menu.
+- Présenter les sections dans des cartes lisibles.
+- Mettre en valeur les blocs de commandes.
+- Ajouter des effets discrets au survol des liens.
+- Prévoir un indicateur de focus visible pour la navigation au clavier.
+- Adapter la mise en page aux petits écrans.
+- Vérifier le contraste et éviter les débordements horizontaux.
+
+### Conventions communes
+
+- Utiliser `.container` pour limiter la largeur du contenu.
+- Utiliser `.card` pour les cartes et `.steps` pour les étapes numérotées.
+- Utiliser `<pre><code>` pour les commandes.
+- Garder les mêmes noms de sections et de classes.
+- Faire un commit après chaque ajout cohérent.
+- Ouvrir une pull request et obtenir une relecture avant de fusionner.
+
+### Assemblage et vérification
+
+1. Valentine prépare et fait fusionner la structure HTML.
+2. Chaque membre récupère cette version avant de poursuivre.
+3. Réda, Amélie et Thomas proposent leurs fichiers par pull request.
+4. Une fois les fichiers fusionnés, Valentine crée une branche
+   `feat/integration-page` et copie les sections dans `index.html`.
+5. L’équipe vérifie la navigation, les commandes et l’affichage mobile.
+
+Attention : les fichiers du dossier `sections` ne s’affichent pas
+automatiquement dans la page. Leur contenu doit être intégré à `index.html`.
