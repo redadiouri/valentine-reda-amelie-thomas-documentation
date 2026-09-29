@@ -209,3 +209,19 @@ git diff
 
 Cette commande lui permet de relire les lignes ajoutées ou supprimées
 avant de préparer son commit.
+
+### Enregistrer la modification
+
+Après avoir vérifié son ajout, Réda sélectionne le fichier modifié :
+
+```bash
+git add workflow.md
+```
+
+Il crée ensuite un commit avec un message précis :
+
+```bash
+git commit -m "docs: preciser les separateurs dans les noms de branches"
+```
+
+Ce commit conserve une trace de la modification sur sa branche locale.
