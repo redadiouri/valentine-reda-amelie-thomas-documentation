@@ -115,6 +115,16 @@ git push -u origin docs/workflow</code></pre>
         <p>Il ouvre une pull request vers <code>main</code>, intitulée
           « Préciser le nommage des branches », et demande la relecture de Valentine.</p>
       </li>
+      <li>
+        <h4>Valentine demande un exemple</h4>
+        <p>Valentine demande : « Peux-tu ajouter un nom de branche concret ? »
+          Réda ajoute <code>docs/guide-installation</code> dans le même fichier.</p>
+        <pre><code>git add sections/workflow.html
+git commit -m "docs: ajouter un exemple de nom de branche"
+git push</code></pre>
+        <p>La correction apparaît dans la pull request existante. Valentine
+          vérifie l’exemple et approuve la nouvelle version.</p>
+      </li>
     </ol>
   </aside>
 </section>
