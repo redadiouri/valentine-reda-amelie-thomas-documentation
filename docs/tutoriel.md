@@ -108,3 +108,31 @@ git push -u origin docs/guide-nouveau
 
 `origin` désigne le dépôt GitHub et `-u` associe la branche locale à sa branche distante. Les prochains envois pourront généralement se faire avec `git push`. Si l’authentification est demandée, suivez la procédure GitHub configurée pour votre compte.
 
+## 9. Ouvrir une pull request et demander une relecture
+
+Sur GitHub :
+
+1. Ouvrez le dépôt. GitHub peut proposer **Compare & pull request** pour la branche que vous venez d’envoyer ; sinon, ouvrez **Pull requests**, puis **New pull request**.
+2. Choisissez `main` comme branche de base (**base**) et `docs/guide-nouveau` comme branche à intégrer (**compare**).
+3. Vérifiez le diff, donnez un titre et décrivez brièvement le changement ainsi que les vérifications effectuées.
+4. Dans **Reviewers**, demandez la relecture au collègue responsable de votre tâche. Pour le tutoriel de prise en main, le README du projet désigne Réda.
+5. Cliquez sur **Create pull request**.
+
+> Une pull request (PR) permet à l’équipe de relire et de discuter les changements avant leur intégration. Répondez aux remarques en modifiant votre branche, puis envoyez les nouveaux commits avec `git push`. Attendez la validation et la fusion dans `main` selon les règles de l’équipe ; ne fusionnez pas vous-même si vous n’y êtes pas autorisé.
+
+## 10. Après la fusion, mettre à jour `main`
+
+Une fois la pull request fusionnée, revenez sur `main` et récupérez la version à jour :
+
+```bash
+git switch main
+git pull origin main
+```
+
+`git switch main` vous replace sur la branche principale et `git pull` récupère la fusion depuis GitHub. Vous pouvez ensuite supprimer votre branche locale terminée :
+
+```bash
+git branch -d docs/guide-nouveau
+```
+
+Sur GitHub, vous pouvez également supprimer la branche distante avec **Delete branch** depuis la pull request fusionnée, si elle n’a pas déjà été supprimée automatiquement. Vérifiez d’abord que vous n’avez plus de travail non enregistré sur cette branche.
