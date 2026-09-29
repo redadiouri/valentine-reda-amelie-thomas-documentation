@@ -260,3 +260,22 @@ Elle demande une précision dans un commentaire :
 
 Elle choisit « Request changes » pour signaler qu’une correction
 est attendue avant l’approbation.
+
+### Corriger et obtenir l’approbation
+
+Sur sa branche `docs/preciser-nommage`, Réda remplace la règle par :
+
+> Séparer les mots par des tirets, sans utiliser d’espaces.
+> Exemple : `docs/guide-installation`.
+
+Il enregistre la correction et l’envoie sur GitHub :
+
+```bash
+git add workflow.md
+git commit -m "docs: preciser que les espaces sont interdits dans nos noms de branches"
+git push
+```
+
+La pull request se met automatiquement à jour.
+Valentine vérifie la correction, puis choisit « Approve »
+pour approuver les changements.
