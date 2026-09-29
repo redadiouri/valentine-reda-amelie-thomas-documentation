@@ -95,3 +95,27 @@ git push
 
 Chaque membre adapte le nom de branche à sa tâche.
 L’envoi publie les commits sur GitHub, mais ne les fusionne pas dans `main`.
+
+## 5. Créer une pull request
+
+Une pull request est une demande de fusion des changements d’une branche
+vers une autre. Elle permet à l’équipe de discuter des modifications
+et de les relire avant leur intégration.
+
+Chez NovaWeb, chaque membre ouvre une pull request vers `main` :
+
+1. Ouvrir le dépôt sur GitHub.
+2. Aller dans « Pull requests », puis « New pull request ».
+3. Choisir `main` comme branche de destination (« base »).
+4. Choisir sa branche de travail comme source (« compare »).
+5. Vérifier les modifications affichées.
+6. Saisir un titre précis et une description des changements.
+7. Cliquer sur « Create pull request ».
+8. Demander une relecture au collègue prévu.
+
+Par exemple, Réda propose la fusion de `docs/workflow` vers `main`
+et demande une relecture à Valentine.
+
+La création de la pull request ne fusionne pas les branches.
+Les nouveaux commits envoyés sur la même branche sont automatiquement
+ajoutés à la pull request.
