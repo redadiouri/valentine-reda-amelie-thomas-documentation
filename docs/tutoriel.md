@@ -86,3 +86,25 @@ git diff
 
 `git status` indique les fichiers modifiés ou nouveaux. `git diff --check` repère notamment les espaces superflus en fin de ligne. `git diff` affiche les modifications des fichiers déjà suivis ; un nouveau fichier n’apparaît pas encore dans ce diff. Relisez le fichier dans VS Code et vérifiez que seuls les changements attendus sont présents.
 
+## 7. Ajouter le fichier et créer un commit
+
+Ajoutez le fichier voulu à la zone de préparation, vérifiez ce qui sera enregistré, puis créez un commit :
+
+```bash
+git add docs/guide-nouveau.md
+git diff --cached
+git commit -m "docs: ajouter le guide du nouveau membre"
+```
+
+Adaptez le chemin si vous avez modifié un autre fichier. `git add` prépare le fichier pour le prochain commit ; `git diff --cached` permet de relire exactement ce qui sera enregistré. Le commit sauvegarde ce lot de changements dans l’historique local. Son message doit décrire clairement la modification.
+
+## 8. Envoyer la branche sur GitHub
+
+Publiez votre branche et configurez son suivi distant :
+
+```bash
+git push -u origin docs/guide-nouveau
+```
+
+`origin` désigne le dépôt GitHub et `-u` associe la branche locale à sa branche distante. Les prochains envois pourront généralement se faire avec `git push`. Si l’authentification est demandée, suivez la procédure GitHub configurée pour votre compte.
+
