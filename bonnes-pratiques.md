@@ -102,3 +102,8 @@ Voici quelques commandes supplémentaires pour vous aider à respecter ces bonne
 - `git log --oneline --graph` : Affiche l'historique des commits de manière compacte et visuelle pour bien comprendre la structure des branches.
 - `git restore <fichier>` : Annule les modifications non commitées d'un fichier (pratique si vous vous êtes trompé).
 - `git stash` : Met vos modifications actuelles de côté temporairement (utile si vous devez changer de branche d'urgence pour corriger un bug sur `main`). Vous pourrez les récupérer plus tard avec `git stash pop`.
+
+Pour voir comment utiliser ces commandes dans des situations réelles au sein de NovaWeb, consultez notre document : **[Exemples concrets](exemples/exemples-concrets.md)**.
+
+---
+*Ce document a été généré par une intelligence artificielle pour faciliter l'apprentissage de l'équipe.*
