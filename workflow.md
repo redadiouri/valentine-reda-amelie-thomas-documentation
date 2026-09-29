@@ -236,3 +236,15 @@ git push -u origin docs/preciser-nommage
 
 Valentine peut maintenant consulter cette branche sur le dépôt distant.
 Les modifications ne sont pas encore intégrées à `main`.
+
+### Demander une relecture à Valentine
+
+Sur GitHub, Réda ouvre une pull request avec :
+
+- Branche de destination : `main`.
+- Branche source : `docs/preciser-nommage`.
+- Titre : « Préciser les règles de nommage des branches ».
+- Description : « Ajouter une règle sur les tirets avec un exemple de nom de branche ».
+
+Il sélectionne Valentine dans la rubrique « Reviewers »
+pour lui demander de vérifier cette modification avant la fusion.
