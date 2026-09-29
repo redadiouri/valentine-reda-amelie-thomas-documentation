@@ -157,3 +157,22 @@ pour supprimer la branche distante devenue inutile.
 Cette suppression conserve les modifications intégrées à `main`
 et leur historique. Elle ne supprime pas la branche présente
 sur notre ordinateur.
+
+### Supprimer la branche locale terminée
+
+Après la fusion et la mise à jour de `main`, nous pouvons supprimer
+notre ancienne branche locale depuis `main` :
+
+```bash
+git branch -d docs/workflow
+```
+
+L’option `-d` vérifie que la branche a été fusionnée avant de la supprimer.
+
+Pour nettoyer les références locales aux branches supprimées sur GitHub :
+
+```bash
+git fetch --prune
+```
+
+Chaque membre adapte le nom de branche à sa tâche.
