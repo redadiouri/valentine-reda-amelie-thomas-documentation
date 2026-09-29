@@ -148,3 +148,12 @@ Cette approbation permet de passer à la fusion.
 Après l’approbation du collègue et la résolution des éventuels conflits,
 l’auteur peut fusionner sa pull request dans `main`.
 Les changements rejoignent alors la documentation commune de NovaWeb.
+
+### Supprimer la branche sur GitHub
+
+Après la fusion, cliquer sur « Delete branch » dans la pull request
+pour supprimer la branche distante devenue inutile.
+
+Cette suppression conserve les modifications intégrées à `main`
+et leur historique. Elle ne supprime pas la branche présente
+sur notre ordinateur.
