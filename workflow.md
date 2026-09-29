@@ -279,3 +279,43 @@ git push
 La pull request se met automatiquement à jour.
 Valentine vérifie la correction, puis choisit « Approve »
 pour approuver les changements.
+
+### Fusionner et terminer la tâche
+
+Après l’approbation de Valentine, Réda fusionne la pull request
+dans `main` avec « Create a merge commit », puis « Confirm merge ».
+
+Il clique sur « Delete branch » pour supprimer la branche distante
+`docs/preciser-nommage`.
+
+Sur son ordinateur, il met ensuite `main` à jour et supprime sa branche locale :
+
+```bash
+git switch main
+git pull origin main
+git branch -d docs/preciser-nommage
+git fetch --prune
+```
+
+La règle de nommage validée est maintenant disponible dans `main`.
+Les autres membres peuvent la récupérer en mettant à jour leur branche `main`.
+
+### Fusionner et terminer la tâche
+
+Après l’approbation de Valentine, Réda fusionne la pull request
+dans `main` avec « Create a merge commit », puis « Confirm merge ».
+
+Il clique sur « Delete branch » pour supprimer la branche distante
+`docs/preciser-nommage`.
+
+Sur son ordinateur, il met ensuite `main` à jour et supprime sa branche locale :
+
+```bash
+git switch main
+git pull origin main
+git branch -d docs/preciser-nommage
+git fetch --prune
+```
+
+La règle de nommage validée est maintenant disponible dans `main`.
+Les autres membres peuvent la récupérer en mettant à jour leur branche `main`.
