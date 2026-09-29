@@ -176,3 +176,19 @@ git fetch --prune
 ```
 
 Chaque membre adapte le nom de branche à sa tâche.
+
+## 8. Exemple concret chez NovaWeb
+
+### Préparer la modification
+
+Réda souhaite préciser les règles de nommage des branches dans
+la documentation. Il crée une branche depuis `main` à jour :
+
+```bash
+git switch main
+git pull origin main
+git switch -c docs/preciser-nommage
+```
+
+Cette branche lui permet de préparer sa modification avant
+de la proposer à Valentine pour relecture.
