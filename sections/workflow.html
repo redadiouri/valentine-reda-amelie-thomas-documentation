@@ -98,4 +98,23 @@ git fetch --prune</code></pre>
         <code>main</code>. Une nouvelle tâche commence sur une nouvelle branche.</p>
     </li>
   </ol>
+  <aside class="card" aria-labelledby="workflow-example-title">
+    <h3 id="workflow-example-title">Exemple : Réda améliore une explication, Valentine la valide</h3>
+    <p>Réda souhaite préciser que les noms de branches utilisent des tirets
+      à la place des espaces. Voici le parcours de cette modification chez NovaWeb.</p>
+    <ol class="steps">
+      <li>
+        <h4>Réda propose son ajout</h4>
+        <p>Sur <code>docs/workflow</code>, il ajoute la règle dans
+          <code>sections/workflow.html</code>, puis vérifie, enregistre et publie
+          sa modification.</p>
+        <pre><code>git diff
+git add sections/workflow.html
+git commit -m "docs: preciser le nommage des branches"
+git push -u origin docs/workflow</code></pre>
+        <p>Il ouvre une pull request vers <code>main</code>, intitulée
+          « Préciser le nommage des branches », et demande la relecture de Valentine.</p>
+      </li>
+    </ol>
+  </aside>
 </section>
