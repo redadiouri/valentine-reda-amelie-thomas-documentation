@@ -12,3 +12,30 @@ Elle sert de référence commune aux quatre membres de NovaWeb.
 Dans notre équipe, chaque modification est préparée sur une branche
 séparée. Elle est ensuite proposée dans une pull request et relue
 par un collègue avant d’être fusionnée dans `main`.
+
+## 2. Créer et nommer une branche
+
+Chez NovaWeb, chaque tâche est réalisée sur une branche dédiée.
+Cela permet aux membres de travailler en parallèle.
+
+Avant de créer une nouvelle branche, nous partons de `main` à jour :
+
+```bash
+git switch main
+git pull origin main
+git switch -c docs/nom-de-la-tache
+```
+
+Nous utilisons des noms courts, en minuscules, sans espaces ni accents.
+Le préfixe indique le type de tâche :
+
+- `docs/` pour la documentation : `docs/workflow`.
+- `feat/` pour une fonctionnalité : `feat/formulaire-contact`.
+- `fix/` pour une correction : `fix/lien-contact`.
+
+Pour ce projet, nos branches sont :
+
+- Valentine : `docs/commandes`.
+- Réda : `docs/workflow`.
+- Amélie : `docs/tutoriel`.
+- Thomas : `docs/bonnes-pratiques`.
