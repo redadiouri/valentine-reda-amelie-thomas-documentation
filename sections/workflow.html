@@ -1,0 +1,141 @@
+<section id="workflow" class="container" aria-labelledby="workflow-title">
+  <header>
+    <h2 id="workflow-title">Notre workflow de collaboration</h2>
+    <p>Chez NovaWeb, les quatre membres de l’équipe utilisent GitHub Flow :
+      une branche par tâche, des commits précis et une relecture avant chaque fusion.</p>
+    <p>La branche <code>main</code> contient la documentation validée et sert de
+      référence commune. Chaque modification est préparée sur une branche dédiée.</p>
+  </header>
+  <ol class="steps">
+    <li class="card">
+      <h3>Créer une branche pour sa tâche</h3>
+      <p>Avant de commencer une nouvelle tâche, enregistrer son travail en cours,
+        puis partir de <code>main</code> à jour. Pour rédiger le workflow :</p>
+      <pre><code>git switch main
+git pull --ff-only origin main
+git switch -c docs/workflow</code></pre>
+      <p>Cette création se fait une seule fois. Si la branche existe déjà,
+        la rejoindre avec <code>git switch docs/workflow</code>.</p>
+      <p>Choisir un nom court, en minuscules, sans espaces ni accents, avec des
+        tirets entre les mots : <code>docs/</code> pour la documentation,
+        <code>feat/</code> pour une fonctionnalité et <code>fix/</code> pour une correction.</p>
+    </li>
+    <li class="card">
+      <h3>Modifier et vérifier son fichier</h3>
+      <p>Réda modifie <code>sections/workflow.html</code>, enregistre le fichier
+        et contrôle les changements avant de les ajouter au prochain commit.</p>
+      <pre><code>git status
+git diff</code></pre>
+      <p><code>git status</code> indique les fichiers modifiés ou nouveaux.
+        <code>git diff</code> montre les modifications non préparées des fichiers
+        déjà suivis ; un nouveau fichier doit aussi être relu dans l’éditeur.</p>
+    </li>
+    <li class="card">
+      <h3>Enregistrer un ajout cohérent avec un commit</h3>
+      <p>Sélectionner uniquement le fichier concerné, vérifier le contenu préparé,
+        puis créer un commit avec un message qui décrit la modification.</p>
+      <pre><code>git add sections/workflow.html
+git diff --staged
+git commit -m "docs: expliquer les etapes du workflow"</code></pre>
+      <p>Un commit enregistre les changements sélectionnés dans l’historique local.
+        Chez NovaWeb, chaque ajout ou correction cohérente possède son propre commit.</p>
+    </li>
+    <li class="card">
+      <h3>Envoyer sa branche sur GitHub</h3>
+      <p>Au premier envoi, associer la branche locale à sa branche distante.
+        <code>origin</code> désigne le dépôt partagé sur GitHub.</p>
+      <pre><code>git push -u origin docs/workflow</code></pre>
+      <p>Pour les envois suivants depuis cette branche, après de nouveaux commits :</p>
+      <pre><code>git push</code></pre>
+      <p>Plusieurs commits peuvent être envoyés ensemble : ils restent distincts.
+        Cet envoi ne fusionne pas les changements dans <code>main</code>.</p>
+    </li>
+    <li class="card">
+      <h3>Ouvrir une pull request</h3>
+      <p>Sur GitHub, ouvrir une demande de fusion depuis la rubrique
+        « Pull requests ». Choisir <code>main</code> comme destination
+        (« base ») et <code>docs/workflow</code> comme source (« compare »).</p>
+      <p>Vérifier les fichiers proposés, donner un titre précis et expliquer
+        les changements. Pour sa section, Réda demande une relecture à Valentine.</p>
+      <p>Si la branche contient d’anciens changements non intégrés à
+        <code>main</code>, ils apparaissent aussi : vérifier tout le contenu proposé.</p>
+    </li>
+    <li class="card">
+      <h3>Faire relire et corriger</h3>
+      <p>Valentine consulte les fichiers modifiés dans la pull request. Elle vérifie
+        les explications, les commandes, la structure HTML et la lisibilité.</p>
+      <p>Si elle demande une correction, Réda reste sur <code>docs/workflow</code>,
+        modifie son fichier, puis enregistre et envoie la correction :</p>
+      <pre><code>git add sections/workflow.html
+git commit -m "docs: clarifier la relecture du workflow"
+git push</code></pre>
+      <p>La même pull request se met à jour. Valentine relit la correction et
+        approuve les changements lorsqu’ils sont prêts.</p>
+    </li>
+    <li class="card">
+      <h3>Fusionner les changements validés</h3>
+      <p>Après l’approbation de Valentine, vérifier que les éventuels contrôles
+        ont réussi et qu’aucun conflit ne bloque la fusion.</p>
+      <p>Si le dépôt autorise cette méthode, choisir « Create a merge commit »
+        pour conserver les commits individuels, puis confirmer la fusion.
+        Les options de squash ou de rebase ne conservent pas le même historique.</p>
+      <p>La section validée rejoint alors <code>main</code> et devient disponible
+        pour toute l’équipe.</p>
+    </li>
+    <li class="card">
+      <h3>Mettre à jour main et nettoyer la branche</h3>
+      <p>Après la fusion, supprimer la branche distante terminée depuis la pull
+        request. Une fois tout son travail enregistré et envoyé, Réda met à jour
+        son dépôt local :</p>
+      <pre><code>git switch main
+git pull --ff-only origin main
+git branch -d docs/workflow
+git fetch --prune</code></pre>
+      <p><code>-d</code> refuse de supprimer une branche dont Git ne reconnaît pas
+        la fusion. En cas de refus, vérifier l’historique avec l’équipe avant de
+        continuer. <code>--prune</code> nettoie les références distantes périmées.</p>
+      <p>Les changements et les commits intégrés restent dans l’historique de
+        <code>main</code>. Une nouvelle tâche commence sur une nouvelle branche.</p>
+    </li>
+  </ol>
+  <aside class="card" aria-labelledby="workflow-example-title">
+    <h3 id="workflow-example-title">Exemple : Réda améliore une explication, Valentine la valide</h3>
+    <p>Réda souhaite préciser que les noms de branches utilisent des tirets
+      à la place des espaces. Voici le parcours de cette modification chez NovaWeb.</p>
+    <ol class="steps">
+      <li>
+        <h4>Réda propose son ajout</h4>
+        <p>Sur <code>docs/workflow</code>, il ajoute la règle dans
+          <code>sections/workflow.html</code>, puis vérifie, enregistre et publie
+          sa modification.</p>
+        <pre><code>git diff
+git add sections/workflow.html
+git commit -m "docs: preciser le nommage des branches"
+git push -u origin docs/workflow</code></pre>
+        <p>Il ouvre une pull request vers <code>main</code>, intitulée
+          « Préciser le nommage des branches », et demande la relecture de Valentine.</p>
+      </li>
+      <li>
+        <h4>Valentine demande un exemple</h4>
+        <p>Valentine demande : « Peux-tu ajouter un nom de branche concret ? »
+          Réda ajoute <code>docs/guide-installation</code> dans le même fichier.</p>
+        <pre><code>git add sections/workflow.html
+git commit -m "docs: ajouter un exemple de nom de branche"
+git push</code></pre>
+        <p>La correction apparaît dans la pull request existante. Valentine
+          vérifie l’exemple et approuve la nouvelle version.</p>
+      </li>
+      <li>
+        <h4>L’équipe récupère la version validée</h4>
+        <p>Réda fusionne la pull request avec un commit de fusion et supprime
+          la branche terminée. Ses deux commits restent dans l’historique.</p>
+        <p>Après avoir enregistré leur travail en cours, les autres membres
+          récupèrent la version commune :</p>
+        <pre><code>git switch main
+git pull --ff-only origin main</code></pre>
+        <p>La tâche est terminée : la modification a été expliquée, relue,
+          corrigée et partagée avec les quatre membres.</p>
+      </li>
+    </ol>
+  </aside>
+</section>
