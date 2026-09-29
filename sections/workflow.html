@@ -82,5 +82,20 @@ git push</code></pre>
       <p>La section validée rejoint alors <code>main</code> et devient disponible
         pour toute l’équipe.</p>
     </li>
+    <li class="card">
+      <h3>Mettre à jour main et nettoyer la branche</h3>
+      <p>Après la fusion, supprimer la branche distante terminée depuis la pull
+        request. Une fois tout son travail enregistré et envoyé, Réda met à jour
+        son dépôt local :</p>
+      <pre><code>git switch main
+git pull --ff-only origin main
+git branch -d docs/workflow
+git fetch --prune</code></pre>
+      <p><code>-d</code> refuse de supprimer une branche dont Git ne reconnaît pas
+        la fusion. En cas de refus, vérifier l’historique avec l’équipe avant de
+        continuer. <code>--prune</code> nettoie les références distantes périmées.</p>
+      <p>Les changements et les commits intégrés restent dans l’historique de
+        <code>main</code>. Une nouvelle tâche commence sur une nouvelle branche.</p>
+    </li>
   </ol>
 </section>
