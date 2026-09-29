@@ -32,3 +32,26 @@ git config --global user.email
 
 Chaque commande doit afficher la valeur configurée.
 
+## 3. Cloner le dépôt de l’entreprise
+
+Sur GitHub, ouvrez le dépôt NovaWeb, cliquez sur **Code**, puis copiez son URL HTTPS ou SSH. Dans le terminal, placez-vous dans le dossier où vous souhaitez enregistrer le projet et exécutez :
+
+```bash
+git clone <URL_DU_DEPOT>
+cd <NOM_DU_DEPOT>
+```
+
+Par exemple, la première commande télécharge une copie du dépôt dans un nouveau dossier. La seconde entre dans ce dossier afin que les prochaines commandes Git s’appliquent au bon projet. Si vous utilisez SSH, votre clé SSH doit être configurée avec GitHub ; avec HTTPS, GitHub peut vous demander de vous authentifier.
+
+## 4. Créer une branche de travail
+
+Vérifiez que vous partez de la branche principale à jour, puis créez une branche dédiée à votre tâche :
+
+```bash
+git switch main
+git pull origin main
+git switch -c docs/guide-nouveau
+```
+
+`git pull` récupère les derniers changements de `main`. `git switch -c` crée la branche `docs/guide-nouveau` et s’y place. Une branche séparée permet de préparer votre contribution sans modifier directement `main`.
+
